@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  Vista principal del Sudoku. Se puede abrir y editar con Scene Builder.
+  Layouts usados: BorderPane (estructura general), VBox y HBox (paneles),
+  StackPane (centra el tablero) y GridPane (el tablero 6x6, que se llena desde TableroVista).
+-->
+<BorderPane fx:id="raiz" prefHeight="680.0" prefWidth="900.0" styleClass="raiz" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.univalle.sudoku.controlador.SudokuController">
+   <top>
+      <VBox alignment="CENTER" spacing="2.0" styleClass="encabezado" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="titulo" text="SUDOKU 6×6" />
+            <Label styleClass="subtitulo" text="Cada fila, columna y bloque de 2×3 debe contener los números del 1 al 6 sin repetir" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <GridPane fx:id="tableroGrid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" />
+         </children>
+         <padding>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </padding>
+      </StackPane>
+   </center>
+   <right>
+      <VBox prefWidth="260.0" spacing="14.0" styleClass="panel-lateral" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnNuevoJuego" focusTraversable="false" maxWidth="Infinity" mnemonicParsing="false" onAction="#onNuevoJuego" styleClass="boton-principal" text="Nuevo juego" />
+            <Button fx:id="btnAyuda" focusTraversable="false" maxWidth="Infinity" mnemonicParsing="false" onAction="#onAyuda" styleClass="boton-secundario" text="Ayuda" />
+            <VBox spacing="6.0" styleClass="tarjeta">
+               <children>
+                  <Label styleClass="tarjeta-titulo" text="Estado de la partida" />
+                  <Label fx:id="lblVacias" styleClass="dato" text="Celdas vacías: –" />
+                  <Label fx:id="lblAyudas" styleClass="dato" text="Ayudas disponibles: –" />
+               </children>
+            </VBox>
+            <Label fx:id="lblMensaje" maxWidth="Infinity" minHeight="72.0" styleClass="mensaje-info" text="" wrapText="true" />
+            <VBox spacing="6.0" styleClass="tarjeta">
+               <children>
+                  <Label styleClass="tarjeta-titulo" text="Controles" />
+                  <Label styleClass="ayuda-texto" text="Clic izquierdo: seleccionar celda&#10;Teclas 1 a 6: escribir número&#10;Supr / Retroceso: borrar&#10;Clic derecho: borrar la celda&#10;Flechas: mover la selección" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" styleClass="barra-estado" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblEstado" styleClass="estado" text="Sin juego" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

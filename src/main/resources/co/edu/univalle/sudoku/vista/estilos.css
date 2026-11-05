@@ -1,0 +1,124 @@
+/* ===== Paleta =====
+   Fondo:        #eef2f7      Texto oscuro:  #1f2a44      Primario (índigo): #3b5bdb
+   Celda fija:   #e3e9f5      Selección:     #dbe4ff      Error (rojo):      #e03131
+   Sugerencia:   #fff3bf / #f59f00                         Éxito (verde):     #d3f9d8 / #2b8a3e
+*/
+
+.raiz {
+    -fx-background-color: #eef2f7;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+}
+
+/* ===== Encabezado y barra de estado ===== */
+.encabezado { -fx-padding: 18 20 0 20; }
+.titulo { -fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1f2a44; }
+.subtitulo { -fx-font-size: 13px; -fx-text-fill: #5c6784; }
+
+.barra-estado {
+    -fx-padding: 8 20;
+    -fx-background-color: #1f2a44;
+}
+.estado { -fx-text-fill: white; -fx-font-size: 13px; }
+
+/* ===== Tablero ===== */
+.tablero {
+    -fx-background-color: #1f2a44;
+    -fx-padding: 4;
+    -fx-hgap: 4;
+    -fx-vgap: 4;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(31, 42, 68, 0.35), 18, 0.2, 0, 6);
+}
+
+.bloque {
+    -fx-background-color: #9aa5c0;
+    -fx-hgap: 1;
+    -fx-vgap: 1;
+}
+
+.celda {
+    -fx-background-color: white;
+    -fx-font-size: 28px;
+    -fx-text-fill: #3b5bdb;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+.celda:hover { -fx-background-color: #f1f5ff; }
+
+.celda-fija {
+    -fx-background-color: #e3e9f5;
+    -fx-text-fill: #1f2a44;
+    -fx-font-weight: bold;
+}
+.celda-fija:hover { -fx-background-color: #e3e9f5; }
+
+.celda-completa { -fx-background-color: #d3f9d8; }
+.celda-completa:hover { -fx-background-color: #d3f9d8; }
+
+.celda-seleccionada { -fx-background-color: #dbe4ff; }
+.celda-seleccionada:hover { -fx-background-color: #dbe4ff; }
+
+.celda-conflicto {
+    -fx-background-color: #ffe3e3;
+    -fx-text-fill: #c92a2a;
+    -fx-border-color: #e03131;
+    -fx-border-width: 3;
+}
+.celda-conflicto:hover { -fx-background-color: #ffe3e3; }
+
+.celda-sugerencia {
+    -fx-background-color: #fff3bf;
+    -fx-text-fill: #e8590c;
+    -fx-font-style: italic;
+    -fx-border-color: #f59f00;
+    -fx-border-width: 3;
+}
+.celda-sugerencia:hover { -fx-background-color: #fff3bf; }
+
+/* La selección va al final para que su borde se vea incluso sobre error o sugerencia */
+.celda-seleccionada {
+    -fx-border-color: #3b5bdb;
+    -fx-border-width: 3;
+}
+
+/* ===== Panel lateral ===== */
+.panel-lateral {
+    -fx-padding: 20;
+    -fx-background-color: white;
+    -fx-border-color: #dde3f0;
+    -fx-border-width: 0 0 0 1;
+}
+
+.boton-principal, .boton-secundario {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 11 16;
+    -fx-cursor: hand;
+}
+.boton-principal { -fx-background-color: #3b5bdb; -fx-text-fill: white; }
+.boton-principal:hover { -fx-background-color: #364fc7; }
+.boton-secundario { -fx-background-color: #fab005; -fx-text-fill: #1f2a44; }
+.boton-secundario:hover { -fx-background-color: #f59f00; }
+.boton-principal:disabled, .boton-secundario:disabled { -fx-opacity: 0.45; }
+
+.tarjeta {
+    -fx-padding: 12;
+    -fx-background-color: #f4f6fb;
+    -fx-background-radius: 8;
+}
+.tarjeta-titulo { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #5c6784; }
+.dato { -fx-font-size: 14px; -fx-text-fill: #1f2a44; }
+.ayuda-texto { -fx-font-size: 12px; -fx-text-fill: #5c6784; -fx-line-spacing: 3; }
+
+/* ===== Mensajes (comparten forma, cambian de color) ===== */
+.mensaje-info, .mensaje-exito, .mensaje-error, .mensaje-sugerencia {
+    -fx-padding: 10 12;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+    -fx-alignment: top-left;
+}
+.mensaje-info       { -fx-background-color: #e7f5ff; -fx-text-fill: #1864ab; }
+.mensaje-exito      { -fx-background-color: #d3f9d8; -fx-text-fill: #2b8a3e; }
+.mensaje-error      { -fx-background-color: #ffe3e3; -fx-text-fill: #c92a2a; }
+.mensaje-sugerencia { -fx-background-color: #fff3bf; -fx-text-fill: #8f5200; }
