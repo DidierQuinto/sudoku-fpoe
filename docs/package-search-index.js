@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"co.edu.univalle.sudoku"},{"l":"co.edu.univalle.sudoku.controlador"},{"l":"co.edu.univalle.sudoku.modelo"},{"l":"co.edu.univalle.sudoku.vista"}];updateSearchResults();
