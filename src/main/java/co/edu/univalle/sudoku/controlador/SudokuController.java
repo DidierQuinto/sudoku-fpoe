@@ -112,7 +112,11 @@ public class SudokuController {
         });
 
         // Filtro a nivel de toda la escena: el teclado funciona sin importar qué nodo tenga el foco.
-        raiz.addEventFilter(KeyEvent.KEY_PRESSED, this::alPresionarTecla);
+        raiz.sceneProperty().addListener((obs, vieja, escena) -> {
+            if (escena != null) {
+                escena.addEventFilter(KeyEvent.KEY_PRESSED, this::alPresionarTecla);
+            }
+        });
 
         mostrarMensaje("Pulsa «Nuevo juego» para comenzar.", TipoMensaje.INFO);
         actualizarPanel();
