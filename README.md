@@ -1,4 +1,4 @@
-# Sudoku 6×6 — Miniproyecto #2 (750014C Fundamentos de Programación Orientada a Eventos)
+# Sudoku 6×6 / Miniproyecto #2
 
 Juego de Sudoku de 6×6 hecho en **Java + JavaFX** con arquitectura **Modelo-Vista-Controlador**.
 Cada fila, columna y bloque de **2 filas × 3 columnas** debe contener los números del 1 al 6 sin repetir.
