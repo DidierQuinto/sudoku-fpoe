@@ -72,6 +72,6 @@ src/main/resources/co/edu/univalle/sudoku/vista/
 | Ingreso de números 1-6 y borrado (HU-3) | `SudokuController.ingresarDigito` / `borrarSeleccion`, `JuegoSudoku.ingresarNumero` |
 | Validación en tiempo real con borde rojo y mensaje (HU-4) | `Tablero.calcularConflictos` / `describirConflicto`, `.celda-conflicto` en el CSS |
 | Ayuda limitada que no resuelve el tablero (HU-5) | `JuegoSudoku.pedirAyuda`: solo sugiere, máx. 3 |
-| Git y GitHub (2 commits y 2 PR por estudiante) | Ver `GUIA_EQUIPO_GIT.md` |
 
-Ver también `GUIA_SUSTENTACION.md` para prepararse para el cambio en vivo y las preguntas del profesor.
+
+
